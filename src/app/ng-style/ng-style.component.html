@@ -1,0 +1,32 @@
+<a routerLink="/home" class="btn btn-outline-success mb-5">back</a>
+
+<h1> {{title}} </h1>
+  <br>
+
+  <!---style binding for colors -->
+  <h2>Style Binding using 'style.color' directive</h2>
+
+  <!--call the random color property to set the color of this div -->
+  <div [style.color]="randomColor"><p class="lead"> I would be styled with different colors dynamically</p> </div>
+  <br>
+
+  <!--attach a click function to this button to set the color dynamically -->
+  <button (click)="setColor()" class="btn btn-info"> Set my color </button>
+  <br>
+  <hr>
+  <br>
+
+  <!---style binding for ngStyle -->
+
+  <h2>Style Binding using 'ngStyle' directive</h2>
+
+  <!--call the style object to style class -->
+  <div [ngStyle]="{ 'color': getRandomColor(), 'font-size': fontSize, 'background-color': backgroundColor }">
+    <p class="lead">It would be styled with different colors dynamically</p>
+  </div>
+
+  <!--attach a click function to this button to set the style dynamically -->
+  <input type="text" [(ngModel)]="backgroundColor" placeholder="background-color">
+  <input type="text" [(ngModel)]="fontSize" placeholder="font-size">
+
+
